@@ -1,0 +1,13 @@
+.hero-wrapper {
+  padding: 80px 0;
+  background: url('https://images.unsplash.com/photo-1521791055366-0d553872125f') center/cover no-repeat;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+
+.hero-paper {
+  padding: 32px;
+  backdrop-filter: blur(4px);
+}
