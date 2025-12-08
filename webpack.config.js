@@ -10,7 +10,7 @@ export default {
   entry: './src/main.jsx',
 
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(process.cwd(), 'dist'),
     filename: 'bundle.js',
     clean: true,
 
