@@ -76,6 +76,7 @@
 .tab-text {
   line-height: 1.7;
   font-size: 17px;
+  text-align: justify;
 }
 
 /******************************
@@ -141,4 +142,68 @@
 .inline-contact-buttons .telegram:hover {
   color: #0088cc;
   transform: scale(1.15);
+}
+.sub-list {
+  margin-left: 20px;
+  margin-top: 4px;
+  line-height: 1.5;
+}
+.question-modal {
+  background: #fff;
+  padding: 25px;
+  border-radius: 14px;
+  max-width: 350px;
+  width: 90%;
+  margin: 120px auto;
+  text-align: center;
+}
+
+.question-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+@media (max-width: 600px) {
+  .medtabs-wrapper {
+    padding: 0 10px;
+  }
+
+  .medtabs-tabs .MuiTab-root {
+    font-size: 13px !important;
+    padding: 6px !important;
+    min-width: auto !important;
+  }
+
+  .tab-content {
+    padding: 10px !important;
+  }
+
+  .info-card {
+    padding: 12px !important;
+  }
+}
+@media (max-width: 700px) {
+  .MuiTab-root {
+    font-size: 15px !important;
+    max-width: 180px !important;
+    padding: 10px 16px !important;
+  }
+}
+
+/* --- Экраны до 550px (средние смартфоны) --- */
+@media (max-width: 550px) {
+  .MuiTab-root {
+    font-size: 14px !important;
+    max-width: 150px !important;
+    padding: 8px 14px !important;
+  }
+}
+
+/* --- Экраны до 420px (малые смартфоны) --- */
+@media (max-width: 420px) {
+  .MuiTab-root {
+    font-size: 12px !important;
+    max-width: 130px !important;
+    padding: 8px 12px !important;
+  }
 }

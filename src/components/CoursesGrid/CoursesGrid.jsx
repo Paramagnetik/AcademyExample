@@ -1,62 +1,69 @@
 import { useNavigate } from 'react-router-dom';
 import { Box, Paper, Typography } from '@mui/material';
+import imgMetrology from './images/metrologija.jpg';
+import imgSafety from './images/ohranaTruda.jpg';
+import imgFire from './images/pozharnaja.jpg';
+import imgConstruction from './images/stroitelstvo.jpg';
+import imgWork from './images/rabochie.jpg';
 import './CoursesGrid.css';
-
-// Пример данных — каждый курс: картинка, заголовок, путь (route), описание
-const courses = [
-  {
-    title: 'Медицина',
-    img: '/images/course-medicine.jpg',
-    route: '/courses/medicina',
-    description: 'Переподготовка, повышение квалификации, аккредитация медицинских работников',
-  },
-  {
-    title: 'Охрана труда и безопасность',
-    img: '/images/course-safety.jpg',
-    route: '/courses/safety',
-    description: 'Курсы охраны труда, промышленной безопасности, пожарной безопасности',
-  },
-  {
-    title: 'Профпереподготовка',
-    img: '/images/course-retraining.jpg',
-    route: '/courses/retraining',
-    description: 'Профессиональная переподготовка по разным направлениям',
-  },
-  {
-    title: 'Курсы повышение квалификации',
-    img: '/images/course-qualification.jpg',
-    route: '/courses/qualification',
-    description: 'Удостоверения, повышение квалификации, тематические курсы',
-  },
-  // Добавь столько, сколько тебе нужно
-];
 
 export default function CoursesGrid() {
   const navigate = useNavigate();
 
-  const handleClick = (route) => {
-    navigate(route);
-  };
+  const courses = [
+    {
+      title: 'Метрология',
+      img: imgMetrology,
+      desc: 'Обучение метрологов и поверителей. Аттестация оборудования.',
+      route: '/courses/metrology',
+    },
+    {
+      title: 'Охрана труда',
+      img: imgSafety,
+      desc: 'Обучение по охране труда и безопасным методам выполнения работ.',
+      route: '/courses/safety',
+    },
+    {
+      title: 'Пожарная безопасность',
+      img: imgFire,
+      desc: 'Инструктажи, обучение, пожарно-технический минимум.',
+      route: '/courses/fire',
+    },
+    {
+      title: 'Рабочие специальности',
+      img: imgWork,
+      desc: 'Обучение рабочим специальностям А Аппаратчик (Профессиональное обучение, без образования) Пройти',
+      route: '/courses/work',
+    },
+    {
+      title: 'Строительство',
+      img: imgConstruction,
+      desc: 'Обучение специалистов строительной сферы, техника безопасности.',
+      route: '/courses/construction',
+    },
+  ];
 
   return (
-    <section className="courses-grid-section">
-      <Typography variant="h4" className="courses-grid-title" align="center" gutterBottom>
-        Курсы
+    <section className="courses-section">
+      <Typography variant="h4" className="courses-title" align="center" gutterBottom>
+        Основные направления обучения в области дополнительного профессионального образования
       </Typography>
 
       <Box className="courses-grid">
-        {courses.map((c, idx) => (
-          <Paper key={idx} className="course-card" elevation={4} onClick={() => handleClick(c.route)}>
-            <div className="course-image-wrapper">
-              <img src={c.img} alt={c.title} className="course-image" />
+        {courses.map((item, index) => (
+          <Paper key={index} className="course-card" elevation={4} onClick={() => navigate(item.route)}>
+            <div className="course-img-wrap">
+              <img src={item.img} alt={item.title} className="course-img" />
             </div>
-            <Box className="course-body">
-              <Typography variant="h6" className="course-title">
-                {c.title}
+
+            <Box className="course-content">
+              <Typography variant="h6" className="course-title-text">
+                {item.title}
               </Typography>
-              <Typography variant="body2" className="course-desc">
-                {c.description}
-              </Typography>
+
+              <Typography className="course-desc">{item.desc}</Typography>
+
+              <Typography className="course-link">Подробнее »</Typography>
             </Box>
           </Paper>
         ))}

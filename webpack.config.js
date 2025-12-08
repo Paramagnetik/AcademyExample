@@ -1,13 +1,24 @@
 import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import { fileURLToPath } from 'url';
+
+// Добавляем поддержку __dirname для ES Modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 export default {
   entry: './src/main.jsx',
 
   output: {
-    path: path.resolve('dist'),
+    path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
     clean: true,
+
+    // Чтобы React Router /courses/... не ломал пути
+    publicPath: '/',
+
+    // Куда складывать картинки
+    assetModuleFilename: 'images/[name][ext]',
   },
 
   resolve: {
@@ -16,14 +27,23 @@ export default {
 
   module: {
     rules: [
+      // JS / JSX
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: 'babel-loader',
       },
+
+      // CSS
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
+      },
+
+      // IMG assets
+      {
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        type: 'asset/resource',
       },
     ],
   },
@@ -35,8 +55,16 @@ export default {
   ],
 
   devServer: {
-    static: './dist',
+    static: {
+      directory: path.join(__dirname, 'dist'),
+    },
+
+    // Главный параметр, чтобы SPA маршруты /courses/... работали
+    historyApiFallback: true,
+
+    host: '0.0.0.0',
     port: 3000,
-    hot: true,
+    open: true,
+    allowedHosts: 'all',
   },
 };

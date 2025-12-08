@@ -1,20 +1,41 @@
-import { ThemeProvider } from '@mui/material/styles';
-import theme from './theme';
+import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Hero from './components/Hero/Hero';
-import Services from './components/Services/Services';
-import Footer from './components/Footer/Footer';
 import MedTabs from './components/MedTabs/MedTabs';
+import CoursesGrid from './components/CoursesGrid/CoursesGrid';
+import Footer from './components/Footer/Footer';
+import Metrology from './pages/Metrology/Metrology';
+import Safety from './pages/Safety/Safety';
+import Construction from './pages/Construction/Construction';
+import FireSafety from './pages/FireSafety/FireSafety';
+import WorkSpecialties from './pages/WorkSpecialties/WorkSpecialties';
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
+    <>
       <Header />
-      <Hero />
-      <MedTabs />
-      {/* <Services /> */}
+
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Hero />
+              <MedTabs />
+              <CoursesGrid />
+            </>
+          }
+        />
+
+        <Route path="/courses/metrology" element={<Metrology />} />
+        <Route path="/courses/safety" element={<Safety />} />
+        <Route path="/courses/fire" element={<FireSafety />} />
+        <Route path="/courses/construction" element={<Construction />} />
+        <Route path="/courses/work" element={<WorkSpecialties />} />
+      </Routes>
+
       <Footer />
-    </ThemeProvider>
+    </>
   );
 }
 

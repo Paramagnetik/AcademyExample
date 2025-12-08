@@ -1,0 +1,50 @@
+/* fix-mobile.css — единый патч */
+html,
+body,
+#root {
+  overflow-x: hidden !important;
+}
+* {
+  box-sizing: border-box;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.container,
+.courses-grid,
+.courses-inner-grid,
+.medtabs-container {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.courses-inner-card,
+.course-card {
+  overflow: hidden;
+}
+.modal-box {
+  max-width: 92vw !important;
+  width: 360px !important;
+}
+
+/* Ensure any transform-based hover doesn't create extra overflow */
+.courses-inner-card,
+.course-card {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+/* Prevent long words/URLs from creating overflow */
+* {
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Hide scrollbar appearance on mobile for neatness (only visual) */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  height: 0;
+  width: 0;
+}
