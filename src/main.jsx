@@ -6,9 +6,10 @@ import './index.css';
 import './fix-mobile.css';
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
+const basename = process.env.NODE_ENV === 'production' ? '/AcademyExample' : '/';
 
 root.render(
-  <HashRouter basename="/AcademyExample">
+  <HashRouter basename={basename}>
     <App />
   </HashRouter>
 );
