@@ -8,7 +8,7 @@ const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
 
 root.render(
-  <BrowserRouter basename="/">
+  <BrowserRouter basename="/AcademyExample">
     <App />
   </BrowserRouter>
 );
