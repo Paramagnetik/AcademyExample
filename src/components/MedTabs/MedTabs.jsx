@@ -14,7 +14,7 @@ export default function MedTabs() {
 
   return (
     <section className="medtabs-wrapper">
-      <Typography variant="h4" fontWeight="bold" gutterBottom className="section-title">
+      <Typography variant="h3" fontWeight="bold" gutterBottom className="section-title">
         Для медработников
       </Typography>
 
