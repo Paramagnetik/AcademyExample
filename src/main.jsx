@@ -9,7 +9,7 @@ const root = createRoot(rootElement);
 const basename = process.env.NODE_ENV === 'production' ? '/AcademyExample' : '';
 
 root.render(
-  <BrowserRouter basename={basename}>
+  <HashRouter>
     <App />
-  </BrowserRouter>
+  </HashRouter>
 );
