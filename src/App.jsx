@@ -10,11 +10,12 @@ import Construction from './pages/Construction/Construction';
 import FireSafety from './pages/FireSafety/FireSafety';
 import WorkSpecialties from './pages/WorkSpecialties/WorkSpecialties';
 
+import ScrollToTop from './components/ScrollToTop';
 function App() {
   return (
     <>
       <Header />
-
+      <ScrollToTop />
       <Routes>
         <Route
           path="/"
