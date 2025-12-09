@@ -6,7 +6,7 @@ import './index.css';
 import './fix-mobile.css';
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
-const basename = process.env.NODE_ENV === 'production' ? '/AcademyExample' : '/';
+const basename = process.env.NODE_ENV === 'production' ? '/AcademyExample' : '';
 
 root.render(
   <BrowserRouter basename={basename}>

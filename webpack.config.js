@@ -15,7 +15,7 @@ export default {
     clean: true,
 
     // Чтобы React Router /courses/... не ломал пути
-    publicPath: './',
+    publicPath: '/AcademyExample/',
 
     // Куда складывать картинки
     assetModuleFilename: 'images/[name][ext]',
