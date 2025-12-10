@@ -1,7 +1,7 @@
 import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { fileURLToPath } from 'url';
-
+import CopyPlugin from 'copy-webpack-plugin';
 // Добавляем поддержку __dirname для ES Modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -10,12 +10,12 @@ export default {
   entry: './src/main.jsx',
 
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(process.cwd(), 'dist'),
     filename: 'bundle.js',
     clean: true,
 
     // Чтобы React Router /courses/... не ломал пути
-    publicPath: '/',
+    publicPath: '/AcademyExample/',
 
     // Куда складывать картинки
     assetModuleFilename: 'images/[name][ext]',

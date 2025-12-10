@@ -14,7 +14,7 @@ export default function MedTabs() {
 
   return (
     <section className="medtabs-wrapper">
-      <Typography variant="h4" fontWeight="bold" gutterBottom className="section-title">
+      <Typography variant="h3" fontWeight="bold" gutterBottom className="section-title">
         Для медработников
       </Typography>
 
@@ -49,21 +49,24 @@ export default function MedTabs() {
             </Paper>
 
             <Paper className="info-card">
-              {/* ВАЖНО: component="div" исправляет ошибку див внутри p */}
-              <Typography className="tab-text" component="div">
-                • Периодическая аккредитация медицинских работников под ключ - 8 000. руб.
-                <br />• Профессиональная переподготовка:
-                <div className="sub-list">
-                  — категория «Средний медицинский персонал» — 8 000 руб. <br />— категория «Врачи» — 10 000 руб.
+              <Typography component="div" className="tab-list">
+                <div className="list-item">Периодическая аккредитация медицинских работников под ключ — 8 000 руб.</div>
+
+                <div className="list-item">
+                  Профессиональная переподготовка:
+                  <div className="sub-list">
+                    <div className="sub-item">категория «Средний медицинский персонал» — 8 000 руб.</div>
+                    <div className="sub-item">категория «Врачи» — 10 000 руб.</div>
+                  </div>
                 </div>
-                • Повышение квалификации 144 ак/часа - 2 000 руб.
-                <br />
-                • Удостоверения по темам: 36/72/144 ак/часов - 500/1000/2000 руб.
-                <br />
-                • Написание портфолио + отчёт за 5 лет - 4 000 руб.
-                <br />
-                • Баллы НМО: курсы 14, 36, 50, 144, 250 ак/часов
-                <br />
+
+                <div className="list-item">Повышение квалификации 144 ак/часа — 2 000 руб.</div>
+
+                <div className="list-item">Удостоверения по темам: 36/72/144 ак/часов — 500/1000/2000 руб.</div>
+
+                <div className="list-item">Написание портфолио + отчёт за 5 лет — 4 000 руб.</div>
+
+                <div className="list-item">Баллы НМО: курсы 14, 36, 50, 144, 250 ак/часов</div>
               </Typography>
 
               {/* Контакты */}
@@ -99,11 +102,15 @@ export default function MedTabs() {
             </Typography>
 
             <div className="contact-buttons">
-              <IconButton className="contact-icon whatsapp" href="https://wa.me/79999999999" target="_blank">
+              <IconButton className="contact-icon whatsapp" href="https://wa.me/79105622738" target="_blank">
                 <WhatsAppIcon fontSize="large" />
               </IconButton>
 
-              <IconButton className="contact-icon telegram" href="https://t.me/username" target="_blank">
+              <IconButton
+                className="contact-icon telegram"
+                href="https://t.me/Grisha_Akademiayobrazovaniay"
+                target="_blank"
+              >
                 <TelegramIcon fontSize="large" />
               </IconButton>
 

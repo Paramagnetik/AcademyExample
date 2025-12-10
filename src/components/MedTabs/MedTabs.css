@@ -207,3 +207,62 @@
     padding: 8px 12px !important;
   }
 }
+/* Новый красивый список */
+.tab-list {
+  font-size: 17px;
+  line-height: 1.7;
+  text-align: left;
+  padding: 5px 5px;
+}
+
+.list-item {
+  position: relative;
+  margin-bottom: 12px;
+  padding-left: 24px;
+}
+
+.list-item::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #1976d2;
+  font-size: 22px;
+  line-height: 18px;
+}
+
+/* Вложенный список */
+.sub-list {
+  margin-top: 6px;
+  margin-left: 15px;
+  padding-left: 15px;
+  border-left: 2px solid #e2e8f0;
+}
+
+.sub-item {
+  margin: 4px 0;
+  font-size: 14px;
+  padding-left: 10px;
+  position: relative;
+}
+
+.sub-item::before {
+  content: '—';
+  position: absolute;
+  left: -10px;
+  color: #555;
+}
+
+/* Адаптивность */
+@media (max-width: 480px) {
+  .tab-list {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .list-item {
+    padding-left: 20px;
+  }
+  .list-item::before {
+    font-size: 18px;
+  }
+}
