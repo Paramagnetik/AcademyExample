@@ -102,11 +102,15 @@ export default function MedTabs() {
             </Typography>
 
             <div className="contact-buttons">
-              <IconButton className="contact-icon whatsapp" href="https://wa.me/79999999999" target="_blank">
+              <IconButton className="contact-icon whatsapp" href="https://wa.me/79105622738" target="_blank">
                 <WhatsAppIcon fontSize="large" />
               </IconButton>
 
-              <IconButton className="contact-icon telegram" href="https://t.me/username" target="_blank">
+              <IconButton
+                className="contact-icon telegram"
+                href="https://t.me/Grisha_Akademiayobrazovaniay"
+                target="_blank"
+              >
                 <TelegramIcon fontSize="large" />
               </IconButton>
 
