@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://paramagnetik.github.io/AcademyExample/sitemap.xml
+Sitemap: https://academy-example.vercel.app/sitemap.xml
