@@ -1,1 +1,1 @@
-тут
+https://academy-example.vercel.app/
