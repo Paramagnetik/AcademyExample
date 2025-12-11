@@ -2,7 +2,7 @@
   "name": "gregory-business-site",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://academy-example.vercel.app",
+  "homepage": "https://www.xn--80aabfqjj3bddt.shop",
   "scripts": {
     "start": "webpack serve --mode development --open",
     "build": "webpack --mode production",

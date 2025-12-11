@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://academy-example.vercel.app/sitemap.xml
+Sitemap: https://www.xn--80aabfqjj3bddt.shop/sitemap.xml
