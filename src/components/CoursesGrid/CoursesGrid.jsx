@@ -6,6 +6,7 @@ import imgFire from './images/pozharnaja.jpg';
 import imgConstruction from './images/stroitelstvo.jpg';
 import imgWork from './images/rabochie.jpg';
 import './CoursesGrid.css';
+import { BreadcrumbsSEO } from '../BreadcrumbsSEO';
 
 export default function CoursesGrid() {
   const navigate = useNavigate();
@@ -44,30 +45,60 @@ export default function CoursesGrid() {
   ];
 
   return (
-    <section className="courses-section">
-      <Typography variant="h4" className="courses-title" align="center" gutterBottom>
-        Основные направления обучения в области дополнительного профессионального образования
-      </Typography>
+    <>
+      <BreadcrumbsSEO
+        items={[
+          {
+            name: 'Главная',
+            url: 'https://www.xn--80aabfqjj3bddt.shop/',
+          },
+          {
+            name: 'Метрология',
+            url: 'https://www.xn--80aabfqjj3bddt.shop/#/courses/metrology',
+          },
+          {
+            name: 'Охрана труда',
+            url: 'https://www.xn--80aabfqjj3bddt.shop/#/courses/safety',
+          },
+          {
+            name: 'Пожарная безопасность',
+            url: 'https://www.xn--80aabfqjj3bddt.shop/#/courses/fire',
+          },
+          {
+            name: 'Рабочие специальности',
+            url: 'https://www.xn--80aabfqjj3bddt.shop/#/courses/work',
+          },
+          {
+            name: 'Строительство',
+            url: 'https://www.xn--80aabfqjj3bddt.shop/#/courses/construction',
+          },
+        ]}
+      />
+      <section className="courses-section">
+        <Typography variant="h4" className="courses-title" align="center" gutterBottom>
+          Основные направления обучения в области дополнительного профессионального образования
+        </Typography>
 
-      <Box className="courses-grid">
-        {courses.map((item, index) => (
-          <Paper key={index} className="course-card" elevation={4} onClick={() => navigate(item.route)}>
-            <div className="course-img-wrap">
-              <img src={item.img} alt={item.title} className="course-img" />
-            </div>
+        <Box className="courses-grid">
+          {courses.map((item, index) => (
+            <Paper key={index} className="course-card" elevation={4} onClick={() => navigate(item.route)}>
+              <div className="course-img-wrap">
+                <img src={item.img} alt={item.title} className="course-img" />
+              </div>
 
-            <Box className="course-content">
-              <Typography variant="h6" className="course-title-text">
-                {item.title}
-              </Typography>
+              <Box className="course-content">
+                <Typography variant="h6" className="course-title-text">
+                  {item.title}
+                </Typography>
 
-              <Typography className="course-desc">{item.desc}</Typography>
+                <Typography className="course-desc">{item.desc}</Typography>
 
-              <Typography className="course-link">Подробнее »</Typography>
-            </Box>
-          </Paper>
-        ))}
-      </Box>
-    </section>
+                <Typography className="course-link">Подробнее »</Typography>
+              </Box>
+            </Paper>
+          ))}
+        </Box>
+      </section>
+    </>
   );
 }

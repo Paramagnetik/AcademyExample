@@ -1,22 +1,32 @@
 import { Container, Typography, Paper } from '@mui/material';
 import './Hero.css';
-
+import { BreadcrumbsSEO } from '../BreadcrumbsSEO';
 export default function Hero() {
   return (
-    <section className="hero-wrapper">
-      <Container maxWidth="md">
-        <Paper elevation={4} className="hero-paper">
-          <Typography variant="h4" fontWeight="bold" gutterBottom>
-            Добро пожаловать!
-          </Typography>
+    <>
+      <BreadcrumbsSEO
+        items={[
+          {
+            name: 'Главная',
+            url: 'https://www.xn--80aabfqjj3bddt.shop/',
+          },
+        ]}
+      />
+      <section className="hero-wrapper">
+        <Container maxWidth="md">
+          <Paper elevation={4} className="hero-paper">
+            <Typography variant="h4" fontWeight="bold" gutterBottom>
+              Добро пожаловать!
+            </Typography>
 
-          <Typography variant="h6" lineHeight={1.6} style={{ textAlign: 'justify' }}>
-            Я, <b>Григорий</b>, ведущий менеджер популярного учебного центра, рад приветствовать вас и представить нашим
-            потенциальным клиентам уникальное предложение по повышению квалификации и профессиональной подготовки для
-            всех сфер деятельности.
-          </Typography>
-        </Paper>
-      </Container>
-    </section>
+            <Typography variant="h6" lineHeight={1.6} style={{ textAlign: 'justify' }}>
+              Я, <b>Григорий</b>, ведущий менеджер популярного учебного центра, рад приветствовать вас и представить
+              нашим потенциальным клиентам уникальное предложение по повышению квалификации и профессиональной
+              подготовки для всех сфер деятельности.
+            </Typography>
+          </Paper>
+        </Container>
+      </section>
+    </>
   );
 }
