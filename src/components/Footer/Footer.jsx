@@ -27,7 +27,9 @@ export default function Footer() {
         </IconButton>
       </div>
 
-      <p className="footer-text">© {new Date().getFullYear()} Академия образования — Григорий. Все права защищены.</p>
+      <p className="footer-text">
+        © {new Date().getFullYear()} Академия образования, онлайн-обучение по всей России. Все права защищены.
+      </p>
     </footer>
   );
 }
